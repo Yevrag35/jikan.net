@@ -101,7 +101,13 @@ namespace JikanDotNet
 					{
 						string json = await response.Content.ReadAsStringAsync();
 
-						returnedObject = JsonConvert.DeserializeObject<T>(json);
+						returnedObject = JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings
+                        {
+                            MissingMemberHandling = MissingMemberHandling.Ignore,
+                            NullValueHandling = NullValueHandling.Include,
+                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                            DateParseHandling = DateParseHandling.DateTime
+                        });
 					}
 					else if (!surpressException)
 					{
