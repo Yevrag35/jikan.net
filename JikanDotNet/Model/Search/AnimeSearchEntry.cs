@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single result from searching anime.
 	/// </summary>
-	public class AnimeSearchEntry
+	public class AnimeSearchEntry : ICloneable
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.
@@ -85,5 +85,27 @@ namespace JikanDotNet
 		/// </summary>
 		[JsonProperty(PropertyName = "rated")]
 		public string Rated { get; set; }
+
+        public AnimeSearchEntry Clone()
+        {
+            return new AnimeSearchEntry
+            {
+                Airing = this.Airing,
+                Description = this.Description,
+                EndDate = this.EndDate,
+                Episodes = this.Episodes,
+                ImageURL = this.ImageURL,
+                MalId = this.MalId,
+                Members = this.Members,
+                Rated = this.Rated,
+                Score = this.Score,
+                StartDate = this.StartDate,
+                Title = this.Title,
+                Type = this.Type,
+                URL = this.URL
+            };
+        }
+
+        object ICloneable.Clone() => this.Clone();
 	}
 }
