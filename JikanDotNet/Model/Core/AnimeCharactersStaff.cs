@@ -12,12 +12,12 @@ namespace JikanDotNet
 		/// Anime's characters collection with basic information.
 		/// </summary>
 		[JsonProperty(PropertyName = "characters")]
-		public ICollection<CharacterEntry> Characters { get; set; }
+		public MALList<CharacterEntry> Characters { get; set; }
 
 		/// <summary>
 		/// Anime's staff collection with basic information.
 		/// </summary>
 		[JsonProperty(PropertyName = "staff")]
-		public ICollection<StaffPositionEntry> Staff { get; set; }
+		public MALList<StaffPositionEntry> Staff { get; set; }
 	}
 }

@@ -14,6 +14,6 @@ namespace JikanDotNet
 		/// Forum topics related to anime.
 		/// </summary>
 		[JsonProperty(PropertyName = "topics")]
-		public ICollection<ForumTopic> Topics { get; set; }
+		public List<ForumTopic> Topics { get; set; }
 	}
 }

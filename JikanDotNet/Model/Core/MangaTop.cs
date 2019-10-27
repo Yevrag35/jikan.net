@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of anime entries on top list.
 		/// </summary>
 		[JsonProperty(PropertyName = "top")]
-		public ICollection<MangaTopEntry> Top { get; set; }
+		public MALList<MangaTopEntry> Top { get; set; }
 	}
 }

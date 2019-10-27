@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of anime reviews.
 		/// </summary>
 		[JsonProperty(PropertyName = "reviews")]
-		public ICollection<AnimeReview> Reviews { get; set; }
+		public List<AnimeReview> Reviews { get; set; }
 	}
 }

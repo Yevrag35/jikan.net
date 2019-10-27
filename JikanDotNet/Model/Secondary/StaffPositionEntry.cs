@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for anime staff position (anime request).
 	/// </summary>
-	public class StaffPositionEntry
+	public class StaffPositionEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// News related to manga.
 		/// </summary>
 		[JsonProperty(PropertyName = "articles")]
-		public ICollection<News> News { get; set; }
+		public List<News> News { get; set; }
 	}
 }

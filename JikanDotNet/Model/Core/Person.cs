@@ -79,18 +79,18 @@ namespace JikanDotNet
 		/// Person's voice acting roles.
 		/// </summary>
 		[JsonProperty(PropertyName = "voice_acting_roles")]
-		public ICollection<VoiceActingRole> VoiceActingRoles { get; set; }
+		public List<VoiceActingRole> VoiceActingRoles { get; set; }
 
 		/// <summary>
 		/// Person's anime staff positions.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime_staff_positions")]
-		public ICollection<AnimeStaffPosition> AnimeStaffPositions { get; set; }
+		public List<AnimeStaffPosition> AnimeStaffPositions { get; set; }
 
 		/// <summary>
 		/// Person's published manga.
 		/// </summary>
 		[JsonProperty(PropertyName = "published_manga")]
-		public ICollection<PublishedManga> PublishedManga { get; set; }
+		public List<PublishedManga> PublishedManga { get; set; }
 	}
 }

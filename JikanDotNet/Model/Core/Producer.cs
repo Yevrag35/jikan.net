@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Producer model class.
 	/// </summary>
-	public class Producer: BaseJikanRequest
+	public class Producer: BaseJikanRequest, IMalEntity
 	{
 		/// <summary>
 		/// Metadata about producer.
@@ -18,7 +18,7 @@ namespace JikanDotNet
 		/// List of anime published by producer.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime")]
-		public ICollection<AnimeSubEntry> Anime { get; set; }
+		public MALList<AnimeSubEntry> Anime { get; set; }
 
 		/// <summary>
 		/// ID associated with MyAnimeList.

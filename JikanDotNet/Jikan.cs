@@ -111,22 +111,17 @@ namespace JikanDotNet
 		private async Task<T> ExecuteGetRequest<T>(string[] args) where T : class
 		{
 			T returnedObject = null;
-			string requestUrl = String.Join("/", args);
+			string requestUrl = string.Join("/", args);
 			try
 			{
 				using (HttpResponseMessage response = await httpClient.GetAsync(requestUrl))
 				{
 					if (response.IsSuccessStatusCode)
 					{
-						string json = await response.Content.ReadAsStringAsync();
-
-						returnedObject = JsonConvert.DeserializeObject<T>(json, new JsonSerializerSettings
+                        using (var content = response.Content)
                         {
-                            MissingMemberHandling = MissingMemberHandling.Ignore,
-                            NullValueHandling = NullValueHandling.Include,
-                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                            DateParseHandling = DateParseHandling.DateTime
-                        });
+                            returnedObject = await content.ReadAsJsonAsync<T>(suppressException);
+                        }
 					}
 					else if (!suppressException)
 					{

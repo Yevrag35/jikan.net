@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Entry on user's anime list model class.
 	/// </summary>
-	public class AnimeListEntry
+	public class AnimeListEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

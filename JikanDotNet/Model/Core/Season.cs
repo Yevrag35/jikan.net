@@ -12,7 +12,7 @@ namespace JikanDotNet
 		/// Season entry for season.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime")]
-		public ICollection<AnimeSubEntry> SeasonEntries { get; set; }
+		public MALList<AnimeSubEntry> SeasonEntries { get; set; }
 
 		/// <summary>
 		/// Year of the season.

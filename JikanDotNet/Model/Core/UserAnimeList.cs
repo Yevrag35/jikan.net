@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of user's anime on their anime list.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime")]
-		public ICollection<AnimeListEntry> Anime { get; set; }
+		public MALList<AnimeListEntry> Anime { get; set; }
 	}
 }

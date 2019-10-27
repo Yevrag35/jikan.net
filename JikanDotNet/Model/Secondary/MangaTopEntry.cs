@@ -5,7 +5,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for entry on top manga list.
 	/// </summary>
-	public class MangaTopEntry
+	public class MangaTopEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

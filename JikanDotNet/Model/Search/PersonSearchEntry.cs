@@ -8,7 +8,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single result from searching person.
 	/// </summary>
-	public class PersonSearchEntry
+	public class PersonSearchEntry : IMalEntity
     {
 		/// <summary>
 		/// ID associated with MyAnimeList.

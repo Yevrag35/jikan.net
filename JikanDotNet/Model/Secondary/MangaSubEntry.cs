@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Entry on manga model class (used in genres and magazines).
 	/// </summary>
-	public class MangaSubEntry
+	public class MangaSubEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.
@@ -60,13 +60,13 @@ namespace JikanDotNet
 		/// Manga's genres numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "genres")]
-		public ICollection<MALSubItem> Genres { get; set; }
+		public MALList<MALSubItem> Genres { get; set; }
 
 		/// <summary>
 		/// Manga's authors numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "authors")]
-		public ICollection<MALSubItem> Authors { get; set; }
+		public MALList<MALSubItem> Authors { get; set; }
 
 		/// <summary>
 		/// Manga's serialzations numerically indexed with array values.

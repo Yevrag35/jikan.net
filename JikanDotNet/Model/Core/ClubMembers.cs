@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of club members.
 		/// </summary>
 		[JsonProperty(PropertyName = "members")]
-		public ICollection<ClubMember> Members { get; set; }
+		public List<ClubMember> Members { get; set; }
 	}
 }

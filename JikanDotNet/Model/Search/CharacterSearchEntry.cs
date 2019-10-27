@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single result from searching character.
 	/// </summary>
-	public class CharacterSearchEntry
+	public class CharacterSearchEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.
@@ -42,12 +42,12 @@ namespace JikanDotNet
 		/// Character's animeography (without anime type).
 		/// </summary>
 		[JsonProperty(PropertyName = "anime")]
-		public ICollection<MALSubItem> Animeography { get; set; }
+		public MALList<MALSubItem> Animeography { get; set; }
 
 		/// <summary>
 		/// Character's mangaography (without anime type).
 		/// </summary>
 		[JsonProperty(PropertyName = "manga")]
-		public ICollection<MALSubItem> Mangaography { get; set; }
+		public MALList<MALSubItem> Mangaography { get; set; }
 	}
 }

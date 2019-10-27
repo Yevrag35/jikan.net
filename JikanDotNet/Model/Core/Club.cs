@@ -68,24 +68,24 @@ namespace JikanDotNet
 		/// Club's staff.
 		/// </summary>
 		[JsonProperty(PropertyName = "staff")]
-		public ICollection<MALSubItem> Staff { get; set; }
+		public MALList<MALSubItem> Staff { get; set; }
 
 		/// <summary>
 		/// Club's anime relations.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime_relations")]
-		public ICollection<MALSubItem> AnimeRelations { get; set; }
+		public MALList<MALSubItem> AnimeRelations { get; set; }
 
 		/// <summary>
 		/// Club's manga relations.
 		/// </summary>
 		[JsonProperty(PropertyName = "manga_relations")]
-		public ICollection<MALSubItem> MangaRelations { get; set; }
+		public MALList<MALSubItem> MangaRelations { get; set; }
 
 		/// <summary>
 		/// Club's character relations.
 		/// </summary>
 		[JsonProperty(PropertyName = "character_relations")]
-		public ICollection<MALSubItem> CharacterRelations { get; set; }
+		public MALList<MALSubItem> CharacterRelations { get; set; }
 	}
 }

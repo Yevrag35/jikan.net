@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of user's friends basic information
 		/// </summary>
 		[JsonProperty(PropertyName = "friends")]
-		public ICollection<Friend> Friends { get; set; }
+		public List<Friend> Friends { get; set; }
 	}
 }

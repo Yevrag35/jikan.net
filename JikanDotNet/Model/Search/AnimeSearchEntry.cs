@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single result from searching anime.
 	/// </summary>
-	public class AnimeSearchEntry : ICloneable
+	public class AnimeSearchEntry : ICloneable, IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

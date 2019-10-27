@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of manga's characters.
 		/// </summary>
 		[JsonProperty(PropertyName = "characters")]
-		public ICollection<CharacterEntry> Characters { get; set; }
+		public MALList<CharacterEntry> Characters { get; set; }
 	}
 }

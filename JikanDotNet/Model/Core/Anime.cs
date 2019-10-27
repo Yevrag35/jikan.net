@@ -42,7 +42,7 @@ namespace JikanDotNet
 		/// Anime's multiple titles (if any). Return null if there is none.
 		/// </summary>
 		[JsonProperty(PropertyName = "title_synonyms")]
-		public ICollection<string> TitleSynonyms { get; set; }
+		public List<string> TitleSynonyms { get; set; }
 
 		/// <summary>
 		/// Anime's image URL
@@ -168,36 +168,36 @@ namespace JikanDotNet
 		/// Anime's producers numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "producers")]
-		public ICollection<MALSubItem> Producers { get; set; }
+		public List<MALSubItem> Producers { get; set; }
 
 		/// <summary>
 		/// Anime's licensors numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "licensors")]
-		public ICollection<MALSubItem> Licensors { get; set; }
+		public List<MALSubItem> Licensors { get; set; }
 
 		/// <summary>
 		/// Anime's studio(s) numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "studios")]
-		public ICollection<MALSubItem> Studios { get; set; }
+		public List<MALSubItem> Studios { get; set; }
 
 		/// <summary>
 		/// Anime's genres numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "genres")]
-		public ICollection<MALSubItem> Genres { get; set; }
+		public List<MALSubItem> Genres { get; set; }
 
 		/// <summary>
 		/// Anime's opening themes numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "opening_themes")]
-		public ICollection<string> OpeningTheme { get; set; }
+		public List<string> OpeningTheme { get; set; }
 
 		/// <summary>
 		/// Anime's ending themes numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "ending_themes")]
-		public ICollection<string> EndingTheme { get; set; }
+		public List<string> EndingTheme { get; set; }
 	}
 }

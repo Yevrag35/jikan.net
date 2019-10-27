@@ -5,7 +5,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class representing voice actor entry on Character's page.
 	/// </summary>
-	public class VoiceActorEntry
+	public class VoiceActorEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

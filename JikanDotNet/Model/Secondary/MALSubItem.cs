@@ -5,7 +5,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class representing sub item on MyAnimeList without image.
 	/// </summary>
-	public class MALSubItem
+	public class MALSubItem : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

@@ -60,18 +60,18 @@ namespace JikanDotNet
 		/// Character's animeography.
 		/// </summary>
 		[JsonProperty(PropertyName = "animeography")]
-		public ICollection<MALImageSubItem> Animeography { get; set; }
+		public MALList<MALImageSubItem> Animeography { get; set; }
 
 		/// <summary>
 		/// Character's mangaography.
 		/// </summary>
 		[JsonProperty(PropertyName = "mangaography")]
-		public ICollection<MALImageSubItem> Mangaography { get; set; }
+		public MALList<MALImageSubItem> Mangaography { get; set; }
 
 		/// <summary>
 		/// Character's voice actors.
 		/// </summary>
 		[JsonProperty(PropertyName = "voice_actors")]
-		public ICollection<VoiceActorEntry> VoiceActors { get; set; }
+		public MALList<VoiceActorEntry> VoiceActors { get; set; }
 	}
 }

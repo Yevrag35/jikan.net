@@ -18,7 +18,7 @@ namespace JikanDotNet
 		/// List of manga published in magazine.
 		/// </summary>
 		[JsonProperty(PropertyName = "manga")]
-		public ICollection<MangaSubEntry> Manga { get; set; }
+		public MALList<MangaSubEntry> Manga { get; set; }
 
 		/// <summary>
 		/// ID associated with MyAnimeList.

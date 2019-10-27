@@ -7,7 +7,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Entry on manga model class (used in genres, schedules, seasons and producers).
 	/// </summary>
-	public class AnimeSubEntry
+	public class AnimeSubEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.
@@ -55,7 +55,7 @@ namespace JikanDotNet
 		/// Anime's producers numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "producers")]
-		public ICollection<MALSubItem> Producers { get; set; }
+		public MALList<MALSubItem> Producers { get; set; }
 
 		/// <summary>
 		/// Anime's licensors as strings.
@@ -73,7 +73,7 @@ namespace JikanDotNet
 		/// Anime's genres numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "genres")]
-		public ICollection<MALSubItem> Genres { get; set; }
+		public MALList<MALSubItem> Genres { get; set; }
 
 		/// <summary>
 		/// Date when anime started/will start airing.

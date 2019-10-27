@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// A collection of recommendations for anime.
 		/// </summary>
 		[JsonProperty(PropertyName = "recommendations")]
-		public ICollection<Recommendation> RecommendationCollection { get; set; }
+		public MALList<Recommendation> RecommendationCollection { get; set; }
 	}
 }

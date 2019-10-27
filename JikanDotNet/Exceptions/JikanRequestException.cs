@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 
 namespace JikanDotNet.Exceptions
 {
@@ -9,7 +10,7 @@ namespace JikanDotNet.Exceptions
 	public class JikanRequestException : Exception
 	{
 		/// <summary>
-		/// Response code received from HttpResponseMessage.
+		/// Response code received from <see cref="HttpResponseMessage"/>.
 		/// </summary>
 		public HttpStatusCode ResponseCode { get; private set; }
 
@@ -32,7 +33,7 @@ namespace JikanDotNet.Exceptions
 		/// </summary>
 		public JikanRequestException(string message, HttpStatusCode responseCode) : base(message)
 		{
-			ResponseCode = responseCode;
+			this.ResponseCode = responseCode;
 		}
 
 		/// <summary>

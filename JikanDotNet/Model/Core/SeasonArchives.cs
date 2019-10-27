@@ -13,6 +13,6 @@ namespace JikanDotNet
 		/// Season entry for season.
 		/// </summary>
 		[JsonProperty(PropertyName = "archive")]
-		public ICollection<SeasonArchive> Archives { get; set; }
+		public List<SeasonArchive> Archives { get; set; }
 	}
 }

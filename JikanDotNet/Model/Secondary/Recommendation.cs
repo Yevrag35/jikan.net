@@ -5,7 +5,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single recommendation.
 	/// </summary>
-	public class Recommendation
+	public class Recommendation : IMalEntity
 	{
 		/// <summary>
 		/// Mal Id of recommended anime/manga.

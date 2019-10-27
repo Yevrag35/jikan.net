@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Studio model class.
 	/// </summary>
-	public class AnimeGenre: BaseJikanRequest
+	public class AnimeGenre : BaseJikanRequest, IMalEntity
 	{
 		/// <summary>
 		/// Metadata about genre.
@@ -24,7 +24,7 @@ namespace JikanDotNet
 		/// List of anime with assigned genre.
 		/// </summary>
 		[JsonProperty(PropertyName = "anime")]
-		public ICollection<AnimeSubEntry> Anime { get; set; }
+		public MALList<AnimeSubEntry> Anime { get; set; }
 
 		/// <summary>
 		/// ID associated with MyAnimeList.

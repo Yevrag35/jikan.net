@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for single result from searching manga.
 	/// </summary>
-	public class MangaSearchEntry
+	public class MangaSearchEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.

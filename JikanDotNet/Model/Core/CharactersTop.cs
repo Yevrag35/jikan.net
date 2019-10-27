@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of characters entries on top list.
 		/// </summary>
 		[JsonProperty(PropertyName = "top")]
-		public ICollection<CharacterTopEntry> Top { get; set; }
+		public MALList<CharacterTopEntry> Top { get; set; }
 	}
 }

@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of people entries on top list.
 		/// </summary>
 		[JsonProperty(PropertyName = "top")]
-		public ICollection<PersonTopEntry> Top { get; set; }
+		public MALList<PersonTopEntry> Top { get; set; }
 	}
 }

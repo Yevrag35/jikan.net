@@ -144,18 +144,18 @@ namespace JikanDotNet
 		/// Manga's genres numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "genres")]
-		public ICollection<MALSubItem> Genres { get; set; }
+		public MALList<MALSubItem> Genres { get; set; }
 
 		/// <summary>
 		/// Manga's authors numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "authors")]
-		public ICollection<MALSubItem> Authors { get; set; }
+		public MALList<MALSubItem> Authors { get; set; }
 
 		/// <summary>
 		/// Manga's serialzations numerically indexed with array values.
 		/// </summary>
 		[JsonProperty(PropertyName = "serializations")]
-		public ICollection<MALSubItem> Serializations { get; set; }
+		public MALList<MALSubItem> Serializations { get; set; }
 	}
 }

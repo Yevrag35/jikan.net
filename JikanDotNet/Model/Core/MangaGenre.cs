@@ -6,7 +6,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Manga genre model class.
 	/// </summary>
-	public class MangaGenre: BaseJikanRequest
+	public class MangaGenre: BaseJikanRequest, IMalEntity
 	{
 		/// <summary>
 		/// Metadata about genre.
@@ -24,7 +24,7 @@ namespace JikanDotNet
 		/// List of manga with assigned genre.
 		/// </summary>
 		[JsonProperty(PropertyName = "manga")]
-		public ICollection<MangaSubEntry> Manga { get; set; }
+		public MALList<MangaSubEntry> Manga { get; set; }
 
 		/// <summary>
 		/// ID associated with MyAnimeList.

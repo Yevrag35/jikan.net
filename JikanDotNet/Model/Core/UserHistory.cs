@@ -12,6 +12,6 @@ namespace JikanDotNet
 		/// Collection of user's history updates.
 		/// </summary>
 		[JsonProperty(PropertyName = "history")]
-		public ICollection<HistoryEntry> History { get; set; }
+		public List<HistoryEntry> History { get; set; }
 	}
 }

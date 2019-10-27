@@ -18,6 +18,6 @@ namespace JikanDotNet
 		/// Anime's episode collection with basic information.
 		/// </summary>
 		[JsonProperty(PropertyName = "episodes")]
-		public ICollection<AnimeEpisode> EpisodeCollection { get; set; }
+		public List<AnimeEpisode> EpisodeCollection { get; set; }
 	}
 }

@@ -7,7 +7,7 @@ namespace JikanDotNet
 	/// <summary>
 	/// Model class for entry on top characters list.
 	/// </summary>
-	public class CharacterTopEntry
+	public class CharacterTopEntry : IMalEntity
 	{
 		/// <summary>
 		/// ID associated with MyAnimeList.
@@ -55,12 +55,12 @@ namespace JikanDotNet
 		/// Character's animeography.
 		/// </summary>
 		[JsonProperty(PropertyName = "animeography")]
-		public ICollection<MALSubItem> Animeography { get; set; }
+		public MALList<MALSubItem> Animeography { get; set; }
 
 		/// <summary>
 		/// Character's mangaography.
 		/// </summary>
 		[JsonProperty(PropertyName = "mangaography")]
-		public ICollection<MALSubItem> Mangaography { get; set; }
+		public MALList<MALSubItem> Mangaography { get; set; }
 	}
 }

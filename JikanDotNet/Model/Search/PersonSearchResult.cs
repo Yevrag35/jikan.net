@@ -12,7 +12,7 @@ namespace JikanDotNet
 		/// List of search results.
 		/// </summary>
 		[JsonProperty(PropertyName = "results")]
-		public ICollection<PersonSearchEntry> Results { get; set; }
+		public MALList<PersonSearchEntry> Results { get; set; }
 
 		/// <summary>
 		/// Index of the last page.
