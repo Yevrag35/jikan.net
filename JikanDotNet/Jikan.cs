@@ -29,7 +29,7 @@ namespace JikanDotNet
 		/// <summary>
 		/// Should exception be thrown in case of failed request.
 		/// </summary>
-		private readonly bool surpressException;
+		private readonly bool suppressException;
 
 		#endregion Field
 		
@@ -41,7 +41,7 @@ namespace JikanDotNet
 		public Jikan()
 		{
 			this.useHttps = true;
-			this.surpressException = true;
+			this.suppressException = true;
 			httpClient = HttpProvider.GetHttpClient(useHttps);
 		}
 
@@ -49,35 +49,54 @@ namespace JikanDotNet
 		/// Constructor.
 		/// </summary>
 		/// <param name="useHttps">Should client send SSL encrypted requests.</param>
-		/// <param name="surpressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
-		public Jikan(bool useHttps, bool surpressException = true)
+		/// <param name="suppressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
+		public Jikan(bool useHttps, bool suppressException = true)
 		{
 			this.useHttps = useHttps;
-			this.surpressException = surpressException;
+			this.suppressException = suppressException;
 			httpClient = HttpProvider.GetHttpClient(useHttps);
 		}
 
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="endpointUrl">Endpoint of the REST API.</param>
-		/// <param name="surpressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
-		public Jikan(string endpointUrl, bool surpressException = true)
-		{
-			this.surpressException = surpressException;
-			httpClient = HttpProvider.GetHttpClient(new Uri(endpointUrl));
-		}
+        public Jikan(bool useHttps, HttpMessageHandler handler, bool disposeHandler, bool suppressException = true)
+        {
+            this.useHttps = useHttps;
+            this.suppressException = suppressException;
+            this.httpClient = HttpProvider.GetHttpClient(useHttps, handler, disposeHandler);
+        }
 
 		/// <summary>
 		/// Constructor.
 		/// </summary>
 		/// <param name="endpointUrl">Endpoint of the REST API.</param>
-		/// <param name="surpressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
-		public Jikan(Uri endpointUrl, bool surpressException = true)
+		/// <param name="suppressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
+		public Jikan(string endpointUrl, bool suppressException = true)
 		{
-			this.surpressException = surpressException;
+			this.suppressException = suppressException;
+			httpClient = HttpProvider.GetHttpClient(new Uri(endpointUrl));
+		}
+
+        public Jikan(string endpointUrl, HttpMessageHandler handler, bool disposeHandler, bool suppressException = true)
+        {
+            this.suppressException = suppressException;
+            this.httpClient = HttpProvider.GetHttpClient(new Uri(endpointUrl, UriKind.Absolute), handler, disposeHandler);
+        }
+
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="endpointUrl">Endpoint of the REST API.</param>
+		/// <param name="supressException">Should exception be thrown in case of failed request. If true, failed request return null.</param>
+		public Jikan(Uri endpointUrl, bool supressException = true)
+		{
+			this.suppressException = supressException;
 			httpClient = HttpProvider.GetHttpClient(endpointUrl);
 		}
+
+        public Jikan(Uri endpointUrl, HttpMessageHandler handler, bool disposeHandler, bool suppressException)
+        {
+            this.suppressException = suppressException;
+            this.httpClient = HttpProvider.GetHttpClient(endpointUrl, handler, disposeHandler);
+        }
 
 		#endregion Constructors
 
@@ -109,7 +128,7 @@ namespace JikanDotNet
                             DateParseHandling = DateParseHandling.DateTime
                         });
 					}
-					else if (!surpressException)
+					else if (!suppressException)
 					{
 						throw new JikanRequestException(string.Format(Resources.Errors.FailedRequest, response.Content), response.StatusCode);
 					}
@@ -117,7 +136,7 @@ namespace JikanDotNet
 			}
 			catch (JsonSerializationException ex)
 			{
-				if (!surpressException)
+				if (!suppressException)
 				{
 					throw new JikanRequestException(Resources.Errors.SerializationFailed + Environment.NewLine + "Inner exception message: " + ex.Message);
 				}

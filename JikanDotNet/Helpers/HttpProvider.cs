@@ -33,19 +33,22 @@ namespace JikanDotNet.Helpers
 		/// <returns>Static HttpClient.</returns>
 		public static HttpClient GetHttpClient(bool useHttps)
 		{
-			
-			string endpoint = useHttps ? httpsEndpoint : httpEndpoint;
-			HttpClient Client = new HttpClient
-			{
-				BaseAddress = new Uri(endpoint)
-			};
-			Client.DefaultRequestHeaders.Accept.Clear();
-			Client.DefaultRequestHeaders.Accept.Add(
-				new MediaTypeWithQualityHeaderValue("application/json"));
-			
-
-			return Client;
+            return GetHttpClient(useHttps, new HttpClientHandler(), false);
 		}
+
+        public static HttpClient GetHttpClient(bool useHttps, HttpMessageHandler handler, bool disposeHandler)
+        {
+            string endpoint = useHttps ? httpsEndpoint : httpEndpoint;
+            HttpClient Client = new HttpClient(handler, disposeHandler)
+            {
+                BaseAddress = new Uri(endpoint)
+            };
+            Client.DefaultRequestHeaders.Accept.Clear();
+            Client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            return Client;
+        }
 
 		/// <summary>
 		/// Get static HttpClient. Using custom, user defined Jikan REST endpoint.
@@ -54,15 +57,20 @@ namespace JikanDotNet.Helpers
 		/// <returns>Static HttpClient.</returns>
 		public static HttpClient GetHttpClient(Uri endpoint)
 		{
-			HttpClient Client = new HttpClient
-			{
-				BaseAddress = endpoint
-			};
-			Client.DefaultRequestHeaders.Accept.Clear();
-			Client.DefaultRequestHeaders.Accept.Add(
-				new MediaTypeWithQualityHeaderValue("application/json"));
-			
-			return Client;
+            return GetHttpClient(endpoint, new HttpClientHandler(), false);
 		}
+
+        public static HttpClient GetHttpClient(Uri endpoint, HttpMessageHandler handler, bool disposeHandler)
+        {
+            HttpClient Client = new HttpClient(handler, disposeHandler)
+            {
+                BaseAddress = endpoint
+            };
+            Client.DefaultRequestHeaders.Accept.Clear();
+            Client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            return Client;
+        }
 	}
 }

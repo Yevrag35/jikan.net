@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JikanDotNet", "JikanDotNet\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JikanDotNet.Tests", "JikanDotNet.Test\JikanDotNet.Tests.csproj", "{4243D94A-C16F-45F6-B8D1-B4EE5272AF88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JikanCore3.0", "JikanCore3.0\JikanCore3.0.csproj", "{73C77676-3881-4A38-87E4-32D67BC17064}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4243D94A-C16F-45F6-B8D1-B4EE5272AF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4243D94A-C16F-45F6-B8D1-B4EE5272AF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4243D94A-C16F-45F6-B8D1-B4EE5272AF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C77676-3881-4A38-87E4-32D67BC17064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C77676-3881-4A38-87E4-32D67BC17064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C77676-3881-4A38-87E4-32D67BC17064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C77676-3881-4A38-87E4-32D67BC17064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

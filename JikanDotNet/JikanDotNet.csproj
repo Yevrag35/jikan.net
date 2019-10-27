@@ -15,6 +15,7 @@
     <PackageIconUrl>https://jikan.moe/assets/images/favicon/apple-touch-icon.png</PackageIconUrl>
     <FileVersion>1.3.0.1</FileVersion>
     <AssemblyVersion>1.3.0.1</AssemblyVersion>
+    <AssemblyName>JikanDotNet</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>

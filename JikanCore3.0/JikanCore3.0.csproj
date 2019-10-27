@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>JikanDotNet</RootNamespace>
+    <AssemblyName>Jikan.Core</AssemblyName>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\JikanDotNet\**\*.cs" Exclude="..\JikanDotNet\Properties\AssemblyInfo.cs;..\JikanDotNet\bin\**\*.cs;..\JikanDotNet\obj\**\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+	</ItemGroup>
+
+</Project>
