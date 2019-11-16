@@ -1,49 +1,196 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-	  <!--<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>-->
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.4.0</Version>
-    <Authors>Bartłomiej Buchała</Authors>
-    <Description>A dotnet wrapper for Jikan REST API, fetching data from MyAnimeList.</Description>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <RepositoryType>Git</RepositoryType>
-    <RepositoryUrl>https://github.com/Ervie/jikan.net</RepositoryUrl>
-    <PackageId>JikanDotNet</PackageId>
-    <PackageTags>anime, MAL, myanimelist.net, myanimelist, Jikan, REST, manga, API, wrapper, JikanDotNet, Jikan.net</PackageTags>
-    <PackageLicenseUrl>https://github.com/Ervie/jikan.net/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Ervie/jikan.net</PackageProjectUrl>
-    <PackageIconUrl>https://jikan.moe/assets/images/favicon/apple-touch-icon.png</PackageIconUrl>
-    <FileVersion>1.4.0.0</FileVersion>
-    <AssemblyVersion>1.4.0.0</AssemblyVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BB6C65D-46C4-49F0-82F4-AFAAD8BACD27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JikanDotNet</RootNamespace>
     <AssemblyName>JikanDotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\JikanDotNet.xml</DocumentationFile>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\JikanDotNet.xml</DocumentationFile>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\JikanDotNet.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
-
   <ItemGroup>
-    <Compile Update="Resources\Errors.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Errors.resx</DependentUpon>
-    </Compile>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Errors.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Compile Include="Jikan.cs" />
+    <Compile Include="Collections\MALList.cs" />
+    <Compile Include="Consts\JikanConstants.cs" />
+    <Compile Include="Enumerations\AgeRating.cs" />
+    <Compile Include="Enumerations\AiringStatus.cs" />
+    <Compile Include="Enumerations\AnimeExtension.cs" />
+    <Compile Include="Enumerations\AnimeSearchSortable.cs" />
+    <Compile Include="Enumerations\AnimeType.cs" />
+    <Compile Include="Enumerations\CharacterExtension.cs" />
+    <Compile Include="Enumerations\ClubExtensions.cs" />
+    <Compile Include="Enumerations\GenreSearch.cs" />
+    <Compile Include="Enumerations\MangaExtension.cs" />
+    <Compile Include="Enumerations\MangaSearchSortable.cs" />
+    <Compile Include="Enumerations\MangaType.cs" />
+    <Compile Include="Enumerations\PersonExtension.cs" />
+    <Compile Include="Enumerations\ScheduledDay.cs" />
+    <Compile Include="Enumerations\SeasonExtension.cs" />
+    <Compile Include="Enumerations\Seasons.cs" />
+    <Compile Include="Enumerations\SortDirection.cs" />
+    <Compile Include="Enumerations\TopAnimeExtension.cs" />
+    <Compile Include="Enumerations\TopMangaExtension.cs" />
+    <Compile Include="Enumerations\UserAnimeListExtension.cs" />
+    <Compile Include="Enumerations\UserExtension.cs" />
+    <Compile Include="Enumerations\UserHistoryExtension.cs" />
+    <Compile Include="Enumerations\UserListAnimeAiringStatus.cs" />
+    <Compile Include="Enumerations\UserListAnimeSearchSortable.cs" />
+    <Compile Include="Enumerations\UserListMangaPublishingStatus.cs" />
+    <Compile Include="Enumerations\UserListMangaSearchSortable.cs" />
+    <Compile Include="Enumerations\UserMangaListExtension.cs" />
+    <Compile Include="Exceptions\JikanRequestException.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\HttpContentExtensions.cs" />
+    <Compile Include="Helpers\HttpProvider.cs" />
+    <Compile Include="Interfaces\IJikan.cs" />
+    <Compile Include="Interfaces\IJsonObject.cs" />
+    <Compile Include="Interfaces\IMalEntity.cs" />
+    <Compile Include="Interfaces\ISearchConfig.cs" />
+    <Compile Include="Model\Base\BaseJikanRequest.cs" />
+    <Compile Include="Model\Core\Anime.cs" />
+    <Compile Include="Model\Core\AnimeCharactersStaff.cs" />
+    <Compile Include="Model\Core\AnimeEpisodes.cs" />
+    <Compile Include="Model\Core\AnimeGenre.cs" />
+    <Compile Include="Model\Core\AnimeNews.cs" />
+    <Compile Include="Model\Core\AnimePictures.cs" />
+    <Compile Include="Model\Core\AnimeReviews.cs" />
+    <Compile Include="Model\Core\AnimeStats.cs" />
+    <Compile Include="Model\Core\AnimeTop.cs" />
+    <Compile Include="Model\Core\AnimeUserUpdates.cs" />
+    <Compile Include="Model\Core\AnimeVideos.cs" />
+    <Compile Include="Model\Core\Character.cs" />
+    <Compile Include="Model\Core\CharacterPictures.cs" />
+    <Compile Include="Model\Core\CharactersTop.cs" />
+    <Compile Include="Model\Core\Club.cs" />
+    <Compile Include="Model\Core\ClubMembers.cs" />
+    <Compile Include="Model\Core\ForumTopics.cs" />
+    <Compile Include="Model\Core\Magazine.cs" />
+    <Compile Include="Model\Core\Manga.cs" />
+    <Compile Include="Model\Core\MangaCharacters.cs" />
+    <Compile Include="Model\Core\MangaGenre.cs" />
+    <Compile Include="Model\Core\MangaNews.cs" />
+    <Compile Include="Model\Core\MangaPictures.cs" />
+    <Compile Include="Model\Core\MangaReviews.cs" />
+    <Compile Include="Model\Core\MangaStats.cs" />
+    <Compile Include="Model\Core\MangaTop.cs" />
+    <Compile Include="Model\Core\MangaUserUpdates.cs" />
+    <Compile Include="Model\Core\MoreInfo.cs" />
+    <Compile Include="Model\Core\PeopleTop.cs" />
+    <Compile Include="Model\Core\Person.cs" />
+    <Compile Include="Model\Core\PersonPictures.cs" />
+    <Compile Include="Model\Core\Producer.cs" />
+    <Compile Include="Model\Core\Recommendations.cs" />
+    <Compile Include="Model\Core\Schedule.cs" />
+    <Compile Include="Model\Core\Season.cs" />
+    <Compile Include="Model\Core\SeasonArchives.cs" />
+    <Compile Include="Model\Core\StatusMetadata.cs" />
+    <Compile Include="Model\Core\UserAnimeList.cs" />
+    <Compile Include="Model\Core\UserFriends.cs" />
+    <Compile Include="Model\Core\UserHistory.cs" />
+    <Compile Include="Model\Core\UserMangaList.cs" />
+    <Compile Include="Model\Core\UserProfile.cs" />
+    <Compile Include="Model\Search\AnimeSearchConfig.cs" />
+    <Compile Include="Model\Search\AnimeSearchEntry.cs" />
+    <Compile Include="Model\Search\AnimeSearchResult.cs" />
+    <Compile Include="Model\Search\CharacterSearchEntry.cs" />
+    <Compile Include="Model\Search\CharacterSearchResult.cs" />
+    <Compile Include="Model\Search\MangaSearchConfig.cs" />
+    <Compile Include="Model\Search\MangaSearchEntry.cs" />
+    <Compile Include="Model\Search\MangaSearchResult.cs" />
+    <Compile Include="Model\Search\PersonSearchEntry.cs" />
+    <Compile Include="Model\Search\PersonSearchResult.cs" />
+    <Compile Include="Model\Search\UserListAnimeSearchConfig.cs" />
+    <Compile Include="Model\Search\UserListMangaSearchConfig.cs" />
+    <Compile Include="Model\Secondary\AnimeEpisode.cs" />
+    <Compile Include="Model\Secondary\AnimeListEntry.cs" />
+    <Compile Include="Model\Secondary\AnimeReview.cs" />
+    <Compile Include="Model\Secondary\AnimeReviewer.cs" />
+    <Compile Include="Model\Secondary\AnimeReviewScores.cs" />
+    <Compile Include="Model\Secondary\AnimeStaffPosition.cs" />
+    <Compile Include="Model\Secondary\AnimeSubEntry.cs" />
+    <Compile Include="Model\Secondary\AnimeTopEntry.cs" />
+    <Compile Include="Model\Secondary\AnimeUserUpdate.cs" />
+    <Compile Include="Model\Secondary\CharacterEntry.cs" />
+    <Compile Include="Model\Secondary\CharacterTopEntry.cs" />
+    <Compile Include="Model\Secondary\ClubMember.cs" />
+    <Compile Include="Model\Secondary\EpisodeVideo.cs" />
+    <Compile Include="Model\Secondary\ForumPostSnippet.cs" />
+    <Compile Include="Model\Secondary\ForumTopic.cs" />
+    <Compile Include="Model\Secondary\Friend.cs" />
+    <Compile Include="Model\Secondary\HistoryEntry.cs" />
+    <Compile Include="Model\Secondary\Licensor.cs" />
+    <Compile Include="Model\Secondary\MALImageSubItem.cs" />
+    <Compile Include="Model\Secondary\MALSubItem.cs" />
+    <Compile Include="Model\Secondary\MangaListEntry.cs" />
+    <Compile Include="Model\Secondary\MangaReview.cs" />
+    <Compile Include="Model\Secondary\MangaReviewer.cs" />
+    <Compile Include="Model\Secondary\MangaReviewScores.cs" />
+    <Compile Include="Model\Secondary\MangaSubEntry.cs" />
+    <Compile Include="Model\Secondary\MangaTopEntry.cs" />
+    <Compile Include="Model\Secondary\MangaUserUpdate.cs" />
+    <Compile Include="Model\Secondary\News.cs" />
+    <Compile Include="Model\Secondary\PersonTopEntry.cs" />
+    <Compile Include="Model\Secondary\Picture.cs" />
+    <Compile Include="Model\Secondary\PromoVideo.cs" />
+    <Compile Include="Model\Secondary\PublishedManga.cs" />
+    <Compile Include="Model\Secondary\Recommendation.cs" />
+    <Compile Include="Model\Secondary\RelatedAnime.cs" />
+    <Compile Include="Model\Secondary\RelatedManga.cs" />
+    <Compile Include="Model\Secondary\Review.cs" />
+    <Compile Include="Model\Secondary\Reviewer.cs" />
+    <Compile Include="Model\Secondary\ScoringStatEntry.cs" />
+    <Compile Include="Model\Secondary\ScoringStats.cs" />
+    <Compile Include="Model\Secondary\SeasonArchive.cs" />
+    <Compile Include="Model\Secondary\StaffPositionEntry.cs" />
+    <Compile Include="Model\Secondary\TimePeriod.cs" />
+    <Compile Include="Model\Secondary\UserFavoritesSection.cs" />
+    <Compile Include="Model\Secondary\UserMangaStatistics.cs" />
+    <Compile Include="Model\Secondary\UsersAnimeStatistics.cs" />
+    <Compile Include="Model\Secondary\UserUpdate.cs" />
+    <Compile Include="Model\Secondary\VoiceActingRole.cs" />
+    <Compile Include="Model\Secondary\VoiceActorEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

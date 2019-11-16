@@ -4,87 +4,98 @@
         <name>Jikan.Core</name>
     </assembly>
     <members>
-        <member name="T:JikanDotNet.Consts.JikanEndPointCategories">
+        <member name="M:JikanDotNet.MALList`1.ToJson">
+            <summary>
+            Converts this instance into its JSON-indented equivalent string.
+            </summary>
+        </member>
+        <member name="M:JikanDotNet.MALList`1.ToJson(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Converts the inheriting class into a JSON string using the specified <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
+            </summary>
+            <param name="serializerSettings">The <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> used when serializing the object.</param>
+        </member>
+        <member name="T:JikanDotNet.Consts.JikanConstants">
             <summary>
             Endpoints in Jikan REST API.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Anime">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Anime">
             <summary>
             Anime endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Manga">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Manga">
             <summary>
             Manga endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Character">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Character">
             <summary>
             Character endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Characters">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Characters">
             <summary>
             Characters endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Person">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Person">
             <summary>
             People endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.People">
+        <member name="F:JikanDotNet.Consts.JikanConstants.People">
             <summary>
             Alternative people endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Season">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Season">
             <summary>
             Season endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Schedule">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Schedule">
             <summary>
             Schedule endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.TopList">
+        <member name="F:JikanDotNet.Consts.JikanConstants.TopList">
             <summary>
             Top list endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Genre">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Genre">
             <summary>
             Genre endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Producer">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Producer">
             <summary>
             Producer endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Magazine">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Magazine">
             <summary>
             Magazine endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.User">
+        <member name="F:JikanDotNet.Consts.JikanConstants.User">
             <summary>
             User endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Club">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Club">
             <summary>
             Club endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Search">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Search">
             <summary>
             Search endpoint.
             </summary>
         </member>
-        <member name="F:JikanDotNet.Consts.JikanEndPointCategories.Meta">
+        <member name="F:JikanDotNet.Consts.JikanConstants.Meta">
             <summary>
             Metadata endpoint.
             </summary>
@@ -6220,37 +6231,6 @@
             Overriden ToString method.
             </summary>
             <returns>Name if not null, base method elsewhere.</returns>
-        </member>
-        <member name="T:JikanDotNet.Resources.Errors">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:JikanDotNet.Resources.Errors.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:JikanDotNet.Resources.Errors.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:JikanDotNet.Resources.Errors.FailedRequest">
-            <summary>
-              Looks up a localized string similar to GET request failed. Inner message: {0}.
-            </summary>
-        </member>
-        <member name="P:JikanDotNet.Resources.Errors.NotEnum">
-            <summary>
-              Looks up a localized string similar to EnumerationValue must be of Enum type.
-            </summary>
-        </member>
-        <member name="P:JikanDotNet.Resources.Errors.SerializationFailed">
-            <summary>
-              Looks up a localized string similar to Serialization failed..
-            </summary>
         </member>
     </members>
 </doc>

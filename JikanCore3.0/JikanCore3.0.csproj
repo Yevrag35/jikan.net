@@ -10,12 +10,17 @@
     <DocumentationFile>C:\Users\Mike\source\repos\JikanYev\JikanCore3.0\Jikan.Core.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
 	<ItemGroup>
 		<Compile Include="..\JikanDotNet\**\*.cs" Exclude="..\JikanDotNet\Properties\AssemblyInfo.cs;..\JikanDotNet\bin\**\*.cs;..\JikanDotNet\obj\**\*.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+	  <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 	  <PackageReference Include="System.Reflection" Version="4.3.0" />
 	</ItemGroup>
 

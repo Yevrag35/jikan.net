@@ -55,6 +55,7 @@ namespace JikanDotNet
         public T Find(Predicate<T> match) => this.InnerList.Find(match);
         public MALList<T> FindAll(Predicate<T> match) => new MALList<T>(this.InnerList.FindAll(match));
         public void ForEach(Action<T> action) => this.InnerList.ForEach(action);
+        public MALList<T> GetRange(int index, int count) => new MALList<T>(this.InnerList.GetRange(index, count));
         public bool TrueForAll(Predicate<T> match) => this.InnerList.TrueForAll(match);
 
         /// <summary>

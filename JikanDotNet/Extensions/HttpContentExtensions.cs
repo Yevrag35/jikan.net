@@ -19,7 +19,7 @@ namespace JikanDotNet.Extensions
             string rawJson = await content.ReadAsStringAsync();
             if (string.IsNullOrWhiteSpace(rawJson) && !suppressExceptions)
             {
-                throw new JikanRequestException(string.Format(Resources.Errors.FailedRequest, "Response content was blank or null."));
+                throw new JikanRequestException(string.Format(JikanConstants.FailedRequest, "Response content was blank or null."));
             }
             else
             {
@@ -32,7 +32,8 @@ namespace JikanDotNet.Extensions
                     FloatParseHandling = FloatParseHandling.Decimal
                 };
                 settings.Converters.Add(new StringEnumConverter(new CamelCaseNamingStrategy()));
-                return JsonConvert.DeserializeObject<T>(rawJson, settings);
+                T result = JsonConvert.DeserializeObject<T>(rawJson, settings);
+                return result;
             }
         }
     }

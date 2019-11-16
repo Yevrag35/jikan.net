@@ -3,8 +3,12 @@
 	/// <summary>
 	/// Endpoints in Jikan REST API.
 	/// </summary>
-	internal class JikanEndPointCategories
+	internal static class JikanConstants
 	{
+        internal const string FailedRequest = "GET request failed.  Inner Message: {0}";
+        internal const string NotEnum = "EnumerationValue must be of Enum type.";
+        internal const string SerializationFailed = "Serialization failed.";
+
 		/// <summary>
 		/// Anime endpoint.
 		/// </summary>
